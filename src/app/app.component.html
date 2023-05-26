@@ -1,6 +1,6 @@
 <p>
   <mat-toolbar color="primary">
-    <button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button (click)="drawer.toggle()" mat-icon-button class="example-icon">
       <mat-icon>menu</mat-icon>
     </button>
     <img id="logo" src="../assets/img/logo.png" alt="">
@@ -18,21 +18,25 @@
   <mat-drawer #drawer [opened]="true" class="sidenav" mode="side">
     <div>
       <div>
-        <button [routerLink]="['dashboard']" color="primary" mat-button>
+        <button [routerLink]="['home']" color="primary" mat-button>
           <mat-icon>home</mat-icon>&nbsp;{{'Home'}}</button>
       </div>
       <div>
-        <button [routerLink]="['bankaccounts']" color="primary" mat-button>
-          <mat-icon>account_balance_wallet</mat-icon>&nbsp;{{'Bank Accounts'}}</button>
+        <button [routerLink]="['accounts']" color="primary" mat-button>
+          <mat-icon>account_balance_wallet</mat-icon>&nbsp;{{'My Accounts'}}</button>
       </div>
       <div>
         <button [routerLink]="['transactions']" color="primary" mat-button>
           <mat-icon>payments</mat-icon>&nbsp;{{'Transactions'}}</button>
       </div>
       <div>
-        <button [routerLink]="['account']" color="primary" mat-button>
-          <mat-icon>person</mat-icon>&nbsp;{{'My Account'}}</button>
+        <button [routerLink]="['profile']" color="primary" mat-button>
+          <mat-icon>person</mat-icon>&nbsp;{{'My Profile'}}</button>
       </div>
     </div>
   </mat-drawer>
+
+  <div class="m294-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

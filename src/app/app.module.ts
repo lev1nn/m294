@@ -19,11 +19,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://localhost:8080/realms/ILV',
+  issuer: 'http://desktop-o2f3aut:8080/realms/ILV',
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
-  clientId: 'demoapp',
+  clientId: 'ebanking',
   scope: 'openid profile roles offline_access',
   responseType: 'code',
   showDebugInformation: true,

@@ -6,7 +6,7 @@ import { TranscationComponent } from './pages/transcation/transcation.component'
 import { CustomerComponent } from './pages/customer/customer.component';
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent },
+  { path: "", component: HomeComponent },
   { path: "accounts", component: AccountComponent },
   { path: "transactions", component: TranscationComponent },
   { path: "profile", component: CustomerComponent }

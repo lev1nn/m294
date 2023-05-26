@@ -5,12 +5,12 @@
     </button>
     <img id="logo" src="../assets/img/logo.png" alt="">
     <span class="example-spacer"></span>
-    <div>
+    <div *ngIf="!oauthService.hasValidAccessToken()">
       <button (click)="login()" mat-button color="basic"><mat-icon>login</mat-icon>Login</button>
     </div>
-    <!-- <div>
+    <div *ngIf="oauthService.hasValidAccessToken()">
       <button (click)="logout()" mat-button color="basic"><mat-icon>logout</mat-icon>Logout</button>
-    </div> -->
+    </div>
   </mat-toolbar>
 </p>
 

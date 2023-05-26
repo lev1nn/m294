@@ -17,6 +17,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { HomeComponent } from './pages/home/home.component';
+import { AccountComponent } from './pages/account/account.component';
+import { CustomerComponent } from './pages/customer/customer.component';
+import { TranscationComponent } from './pages/transcation/transcation.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-o2f3aut:8080/realms/ILV',
@@ -39,7 +43,11 @@ export function storageFactory(): OAuthStorage {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AccountComponent,
+    CustomerComponent,
+    TranscationComponent
   ],
   imports: [
     BrowserModule,

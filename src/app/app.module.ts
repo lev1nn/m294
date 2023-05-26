@@ -10,8 +10,13 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { HttpXSRFInterceptor } from './interceptor/http.csrf.interceptor';
 import { AppAuthGuard } from './guard/app.auth.guard';
 import { AppAuthService } from './service/app.auth.service';
-import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -45,8 +50,13 @@ export function storageFactory(): OAuthStorage {
       headerName: 'X-XSRF-TOKEN'
     }),
     OAuthModule.forRoot({resourceServer: {sendAccessToken: true}}),
+    BrowserAnimationsModule,
+    MatToolbarModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    MatIconModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [
     {provide: AuthConfig, useValue: authConfig},

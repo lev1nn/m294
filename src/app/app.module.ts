@@ -23,7 +23,7 @@ import { CustomerComponent } from './pages/customer/customer.component';
 import { TranscationComponent } from './pages/transcation/transcation.component';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://desktop-o2f3aut:8080/realms/ILV',
+  issuer: 'https://sso.bbzbl-it.dev/realms/ILV', //'http://desktop-o2f3aut:8080/realms/ILV' //'http://localhost:8080/realms/ILV'
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,

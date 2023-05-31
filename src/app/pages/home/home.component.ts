@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AppAuthService} from '../../service/app.auth.service';
 import {HeaderService} from '../../service/header.service';
+import { OAuthService } from 'angular-oauth2-oidc';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent {
   useralias = '';
   username = '';
 
-  constructor(private authService: AppAuthService, private headerService: HeaderService) {
+  constructor(private authService: AppAuthService, private headerService: HeaderService, public oauthService: OAuthService) {
     this.headerService.setPage('nav.dashboard');
   }
 

@@ -1,3 +1,8 @@
 <img id="logo" src="../../../assets/img/logo_blue2.png" alt="">
 
-<h1 id="welcome">Welcome {{ useralias }}</h1>
+<div *ngIf="!oauthService.hasValidAccessToken()">
+  <h1 id="welcome">Please log in to see home dashboard</h1>
+</div>
+<div *ngIf="oauthService.hasValidAccessToken()">
+  <h1 id="welcome">Welcome {{ useralias }}</h1>
+</div>

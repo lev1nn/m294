@@ -14,9 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './pages/home/home.component';
 import { AccountComponent } from './pages/account/account.component';
 import { CustomerComponent } from './pages/customer/customer.component';
@@ -53,10 +53,10 @@ export function storageFactory(): OAuthStorage {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientXsrfModule.withOptions({
+    /* HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN'
-    }),
+    }), */
     OAuthModule.forRoot({resourceServer: {sendAccessToken: true}}),
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -67,8 +67,8 @@ export function storageFactory(): OAuthStorage {
     MatSelectModule
   ],
   providers: [
-    {provide: AuthConfig, useValue: authConfig},
-    {provide: HTTP_INTERCEPTORS, useClass: HttpXSRFInterceptor, multi: true},
+    { provide: AuthConfig, useValue: authConfig },
+    // { provide: HTTP_INTERCEPTORS, useClass: HttpXSRFInterceptor, multi: true },
     {
       provide: OAuthStorage, useFactory: storageFactory
     },

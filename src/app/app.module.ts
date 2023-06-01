@@ -53,10 +53,10 @@ export function storageFactory(): OAuthStorage {
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    /* HttpClientXsrfModule.withOptions({
+    HttpClientXsrfModule.withOptions({
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN'
-    }), */
+    }),
     OAuthModule.forRoot({resourceServer: {sendAccessToken: true}}),
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -68,7 +68,7 @@ export function storageFactory(): OAuthStorage {
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },
-    // { provide: HTTP_INTERCEPTORS, useClass: HttpXSRFInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpXSRFInterceptor, multi: true },
     {
       provide: OAuthStorage, useFactory: storageFactory
     },

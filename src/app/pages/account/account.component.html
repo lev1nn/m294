@@ -1,4 +1,4 @@
-<div>
+<div *appIsInRole="'admin'">
   <mat-toolbar color="primary">
     <span>
       <button (click)="add()" color="primary" mat-button style="color: white">
@@ -10,13 +10,13 @@
 </div>
 <div>
   <table [dataSource]="accountDataSource" class="mat-elevation-z8 departments-table" mat-table>
-      <ng-container matColumnDef="actions">
+      <ng-container matColumnDef="actions" >
           <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
-          <td *matCellDef="let element" mat-cell style="text-align: end">
-              <button (click)="edit(element)" color="primary" mat-button>
+          <td *matCellDef="let element" mat-cell style="text-align: end" >
+              <button *appIsInRole="'admin'" (click)="edit(element)" color="primary" mat-button>
                   <mat-icon>edit</mat-icon>
               </button>
-              <button (click)="delete(element)" color="warn" mat-button>
+              <button *appIsInRole="'admin'" (click)="delete(element)" color="warn" mat-button>
                   <mat-icon>delete</mat-icon>
               </button>
           </td>

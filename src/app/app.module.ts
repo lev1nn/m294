@@ -21,6 +21,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { AccountComponent } from './pages/account/account.component';
 import { CustomerComponent } from './pages/customer/customer.component';
 import { TranscationComponent } from './pages/transcation/transcation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatInputModule } from '@angular/material/input';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-o2f3aut:8080/realms/ILV', //'https://sso.bbzbl-it.dev/realms/ILV' //'http://localhost:8080/realms/ILV'
@@ -64,7 +67,11 @@ export function storageFactory(): OAuthStorage {
     MatIconModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },

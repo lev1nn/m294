@@ -5,6 +5,6 @@ export class Customer {
   public userName = '';
   public firstName = '';
   public lastName = '';
-  public age!: number;
+  public age = 0;
   public address = new Address();
 }

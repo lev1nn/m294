@@ -47,12 +47,12 @@ export class AppAuthService {
   public getRoles(): Observable<Array<string>> {
     if (this._decodedAccessToken !== null) {
       return new Observable<Array<string>>(observer => {
-        if (this._decodedAccessToken.resource_access.demoapp.roles) {
-          if (Array.isArray(this._decodedAccessToken.resource_access.demoapp.roles)) {
-            const resultArr = this._decodedAccessToken.resource_access.demoapp.roles.map((r: string) => r.replace('ROLE_', ''));
+        if (this._decodedAccessToken.resource_access.ebanking.roles) {
+          if (Array.isArray(this._decodedAccessToken.resource_access.ebanking.roles)) {
+            const resultArr = this._decodedAccessToken.resource_access.ebanking.roles.map((r: string) => r.replace('ROLE_', ''));
             observer.next(resultArr);
           } else {
-            observer.next([this._decodedAccessToken.resource_access.demoapp.roles.replace('ROLE_', '')]);
+            observer.next([this._decodedAccessToken.resource_access.ebanking.roles.replace('ROLE_', '')]);
           }
         }
       });

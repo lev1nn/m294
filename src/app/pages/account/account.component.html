@@ -1,1 +1,42 @@
-<p>account works!</p>
+<!--  <div> only for admin
+  <mat-toolbar color="primary">
+    <span>
+      <button (click)="add()" color="primary" mat-button style="color: white">
+        <mat-icon>add</mat-icon>
+          Add new person
+      </button>
+    </span>
+  </mat-toolbar>
+</div> -->
+<div>
+  <table [dataSource]="accountDataSource" class="mat-elevation-z8 departments-table" mat-table>
+      <!-- <ng-container matColumnDef="actions"> only for admin
+          <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
+          <td *matCellDef="let element" mat-cell style="text-align: end">
+              <button (click)="edit(element)" color="primary" mat-button>
+                  <mat-icon>edit</mat-icon>
+              </button>
+              <button (click)="delete(element)" color="warn" mat-button>
+                  <mat-icon>delete</mat-icon>
+              </button>
+          </td>
+      </ng-container> -->
+      <ng-container matColumnDef="id">
+          <th *matHeaderCellDef mat-header-cell>Id</th>
+          <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="accountName">
+          <th *matHeaderCellDef mat-header-cell>Account Name</th>
+          <td *matCellDef="let element" mat-cell> {{element.accountName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="balance">
+          <th *matHeaderCellDef mat-header-cell>Balance</th>
+          <td *matCellDef="let element" mat-cell> {{element.balance}} </td>
+      </ng-container>
+      <tr *matHeaderRowDef="columns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+  </table>
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
+                 showFirstLastButtons>
+  </mat-paginator> -->
+</div>

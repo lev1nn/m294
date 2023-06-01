@@ -24,6 +24,9 @@ import { TranscationComponent } from './pages/transcation/transcation.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table'
+import { IsInRoleDirective } from './dir/is.in.role.dir';
+import { IsInRolesDirective } from './dir/is.in.roles.dir';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-o2f3aut:8080/realms/ILV', //'https://sso.bbzbl-it.dev/realms/ILV' //'http://localhost:8080/realms/ILV'
@@ -50,7 +53,9 @@ export function storageFactory(): OAuthStorage {
     HomeComponent,
     AccountComponent,
     CustomerComponent,
-    TranscationComponent
+    TranscationComponent,
+    IsInRoleDirective,
+    IsInRolesDirective
   ],
   imports: [
     BrowserModule,
@@ -71,7 +76,8 @@ export function storageFactory(): OAuthStorage {
     ReactiveFormsModule,
     MatSnackBarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },

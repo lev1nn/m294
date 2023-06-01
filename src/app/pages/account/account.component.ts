@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Account } from 'src/app/data/account';
 import { AccountService } from 'src/app/service/account.service';
 import { MatTableDataSource } from '@angular/material/table';
+import {ConfirmDialogComponent} from "../../components/confirm-dialog/confirm-dialog.component";
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-account',
@@ -13,10 +15,10 @@ import { MatTableDataSource } from '@angular/material/table';
 export class AccountComponent implements OnInit {
   personsDataSource = new MatTableDataSource<AccountComponent>();
 
-  columns = ['id', 'accountName', 'balance'];
+  columns = ['id', 'accountName', 'balance', 'actions'];
   accountDataSource: Array<Account> = [];
 
-  public constructor(private accountService: AccountService,
+  public constructor(private accountService: AccountService, private dialog: MatDialog,
                      private router: Router, private snackBar: MatSnackBar) {
   }
 
@@ -30,24 +32,24 @@ export class AccountComponent implements OnInit {
     });
   }
 
-  /* async edit(e: Account) {
-    await this.router.navigate(['person', e.id]);
-  } */
+  async edit(e: Account) {
+    await this.router.navigate(['accounts', e.id]);
+  }
 
-  /* async add() {
-    await this.router.navigate(['person']);
-  } */
+  async add() {
+    await this.router.navigate(['accounts']);
+  }
 
-  /* delete(e: Account) {
+  delete(e: Account) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: '450px',
       data: {
-        title: 'Delete Person?',
-        message: 'Do you really want to delete the selected person?'
+        title: 'Delete Account?',
+        message: 'Do you really want to delete the selected account?'
       }
-    }); */
+    });
 
-    /* dialogRef.afterClosed().subscribe(dialogResult => {
+    dialogRef.afterClosed().subscribe(dialogResult => {
       if (dialogResult === true) {
         this.accountService.delete(e.id).subscribe({
           next: response => {
@@ -61,5 +63,6 @@ export class AccountComponent implements OnInit {
           error: () => this.snackBar.open('Item could not be deleted, server error!', 'Close', {duration: 5000})
         });
       }
-    }); */
+    });
   }
+}

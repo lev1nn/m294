@@ -1,16 +1,16 @@
-<!--  <div> only for admin
+<div>
   <mat-toolbar color="primary">
     <span>
       <button (click)="add()" color="primary" mat-button style="color: white">
         <mat-icon>add</mat-icon>
-          Add new person
+          Add new account
       </button>
     </span>
   </mat-toolbar>
-</div> -->
+</div>
 <div>
   <table [dataSource]="accountDataSource" class="mat-elevation-z8 departments-table" mat-table>
-      <!-- <ng-container matColumnDef="actions"> only for admin
+      <ng-container matColumnDef="actions">
           <th *matHeaderCellDef class="w-75 th-center" mat-header-cell></th>
           <td *matCellDef="let element" mat-cell style="text-align: end">
               <button (click)="edit(element)" color="primary" mat-button>
@@ -20,7 +20,7 @@
                   <mat-icon>delete</mat-icon>
               </button>
           </td>
-      </ng-container> -->
+      </ng-container>
       <ng-container matColumnDef="id">
           <th *matHeaderCellDef mat-header-cell>Id</th>
           <td *matCellDef="let element" mat-cell> {{element.id}} </td>
@@ -36,7 +36,7 @@
       <tr *matHeaderRowDef="columns" mat-header-row></tr>
       <tr *matRowDef="let row; columns: columns;" mat-row></tr>
   </table>
-  <!-- <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
+  <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
                  showFirstLastButtons>
-  </mat-paginator> -->
+  </mat-paginator>
 </div>

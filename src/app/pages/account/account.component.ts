@@ -33,11 +33,11 @@ export class AccountComponent implements OnInit {
   }
 
   async edit(e: Account) {
-    await this.router.navigate(['accounts', e.id]);
+    await this.router.navigate(['account', e.id]);
   }
 
   async add() {
-    await this.router.navigate(['accounts']);
+    await this.router.navigate(['account']);
   }
 
   delete(e: Account) {

@@ -1,0 +1,31 @@
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="toolbar-spacer"></span>
+      <button (click)="back()" color="primary" mat-button style="color: white">
+        <mat-icon>arrow_back_ios</mat-icon>
+        Back
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <br>
+</div>
+<div class="app-form">
+  <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
+      <mat-form-field>
+          <mat-label>Account Name</mat-label>
+          <input #inputAccountName formControlName="accountName" matInput maxlength="30" required>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Balance</mat-label>
+          <input #inputBalance formControlName="balance" matInput maxlength="20" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Customer</mat-label>
+        <input #inputCustomer formControlName="customer" matInput maxlength="20" required>
+      </mat-form-field>
+      <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
+          Save
+      </button>
+  </form>
+</div>

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Account } from 'src/app/data/account';
 import { AccountService } from 'src/app/service/account.service';
 import { MatTableDataSource } from '@angular/material/table';
-import {ConfirmDialogComponent} from "../../components/confirm-dialog/confirm-dialog.component";
+import { ConfirmDialogComponent } from "../../components/confirm-dialog/confirm-dialog.component";
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -54,13 +54,13 @@ export class AccountComponent implements OnInit {
         this.accountService.delete(e.id).subscribe({
           next: response => {
             if (response.status === 200) {
-              this.snackBar.open('Person deleted!"', 'Close', {duration: 5000});
+              this.snackBar.open('Account deleted!"', 'Close', {duration: 5000});
               this.reloadData();
             } else {
-              this.snackBar.open('Item could not be deleted, server error!', 'Close', {duration: 5000});
+              this.snackBar.open('Account could not be deleted, server error!', 'Close', {duration: 5000});
             }
           },
-          error: () => this.snackBar.open('Item could not be deleted, server error!', 'Close', {duration: 5000})
+          error: () => this.snackBar.open('Account could not be deleted, server error!', 'Close', {duration: 5000})
         });
       }
     });

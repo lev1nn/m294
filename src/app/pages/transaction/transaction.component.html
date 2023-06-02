@@ -1,0 +1,43 @@
+<div>
+  <mat-toolbar color="primary">
+    <span>
+      <button (click)="add()" color="primary" mat-button style="color: white">
+        <mat-icon>add</mat-icon>
+          Add new account
+      </button>
+    </span>
+  </mat-toolbar>
+</div>
+<div>
+  <table [dataSource]="accountDataSource" class="mat-elevation-z8 departments-table" mat-table>
+      <ng-container matColumnDef="id">
+          <th *matHeaderCellDef mat-header-cell>Id</th>
+          <td *matCellDef="let element" mat-cell> {{element.id}} </td>
+      </ng-container>
+      <ng-container matColumnDef="payingAccount">
+        <th *matHeaderCellDef mat-header-cell>Paying Account</th>
+        <td *matCellDef="let element" mat-cell> {{element.payingAccount.accountName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="receivingAccount">
+        <th *matHeaderCellDef mat-header-cell>Receiving Account</th>
+        <td *matCellDef="let element" mat-cell> {{element.receivingAccount.accountName}} </td>
+      </ng-container>
+      <ng-container matColumnDef="amount">
+        <th *matHeaderCellDef mat-header-cell>Amount</th>
+        <td *matCellDef="let element" mat-cell> {{element.amount}} </td>
+      </ng-container>
+      <ng-container matColumnDef="time">
+        <th *matHeaderCellDef mat-header-cell>Time</th>
+        <td *matCellDef="let element" mat-cell> {{element.time}} </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th *matHeaderCellDef mat-header-cell>Description</th>
+        <td *matCellDef="let element" mat-cell> {{element.description}} </td>
+      </ng-container>
+      <tr *matHeaderRowDef="columns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: columns;" mat-row></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10]" [pageSize]="10"
+                 showFirstLastButtons>
+  </mat-paginator>
+</div>

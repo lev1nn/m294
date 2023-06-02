@@ -20,7 +20,7 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { HomeComponent } from './pages/home/home.component';
 import { AccountComponent } from './pages/account/account.component';
 import { CustomerComponent } from './pages/customer/customer.component';
-import { TranscationComponent } from './pages/transcation/transcation.component';
+import { TransactionComponent } from './pages/transaction/transaction.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
@@ -56,7 +56,7 @@ export function storageFactory(): OAuthStorage {
     HomeComponent,
     AccountComponent,
     CustomerComponent,
-    TranscationComponent,
+    TransactionComponent,
     IsInRoleDirective,
     IsInRolesDirective,
     ConfirmDialogComponent

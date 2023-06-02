@@ -8,7 +8,7 @@ export class HttpXSRFInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (!req.url.startsWith('http://desktop-o2f3aut:8080')) { //http://localhost:8080
+    if (!req.url.startsWith('http://localhost:8080')) {
       const headerName = 'X-XSRF-TOKEN';
       const token = this.tokenExtractor.getToken() as string;
       if (token !== null && !req.headers.has(headerName)) {

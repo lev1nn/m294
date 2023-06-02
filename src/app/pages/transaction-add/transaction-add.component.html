@@ -22,7 +22,7 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Amount</mat-label>
-        <input #inputAmount formControlName="amount" matInput maxlength="100" required>
+        <input #inputAmount formControlName="amount" matInput maxlength="20" required>
       </mat-form-field>
       <!-- <mat-form-field>
         <mat-label>Time</mat-label>
@@ -30,7 +30,7 @@
       </mat-form-field> -->
       <mat-form-field>
         <mat-label>Description</mat-label>
-        <input #inputDescription formControlName="description" matInput maxlength="100">
+        <input #inputDescription formControlName="description" matInput maxlength="200">
       </mat-form-field>
       <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
           Save

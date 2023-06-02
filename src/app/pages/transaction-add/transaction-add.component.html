@@ -1,0 +1,39 @@
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span class="toolbar-spacer"></span>
+      <button (click)="back()" color="primary" mat-button style="color: white">
+        <mat-icon>arrow_back_ios</mat-icon>
+        Back
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <br>
+</div>
+<div class="app-form">
+  <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
+      <mat-form-field>
+          <mat-label>Paying Account</mat-label>
+          <input #inputPayingAccount formControlName="payingAccount" matInput maxlength="30" required>
+      </mat-form-field>
+      <mat-form-field>
+          <mat-label>Receiving Account</mat-label>
+          <input #inputReceivingAccount formControlName="receivingAccount" matInput maxlength="30" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input #inputAmount formControlName="amount" matInput maxlength="100" required>
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <mat-label>Time</mat-label>
+        <input #inputTime formControlName="time" matInput maxlength="10" required>
+      </mat-form-field> -->
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input #inputDescription formControlName="description" matInput maxlength="100">
+      </mat-form-field>
+      <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
+          Save
+      </button>
+  </form>
+</div>

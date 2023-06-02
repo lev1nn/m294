@@ -30,6 +30,7 @@ import { IsInRolesDirective } from './dir/is.in.roles.dir';
 import { MatPaginatorModule } from '@angular/material/paginator'
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { TransactionAddComponent } from './pages/transaction-add/transaction-add.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-o2f3aut:8080/realms/ILV', //'https://sso.bbzbl-it.dev/realms/ILV' //'http://localhost:8080/realms/ILV'
@@ -59,7 +60,8 @@ export function storageFactory(): OAuthStorage {
     TransactionComponent,
     IsInRoleDirective,
     IsInRolesDirective,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    TransactionAddComponent
   ],
   imports: [
     BrowserModule,

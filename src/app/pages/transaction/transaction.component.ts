@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Transaction } from 'src/app/data/transaction';
 import { TransactionService } from 'src/app/service/transaction.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { ConfirmDialogComponent } from "../../components/confirm-dialog/confirm-dialog.component";
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -32,37 +31,7 @@ export class TransactionComponent implements OnInit {
     });
   }
 
-  async edit(e: Transaction) {
-    await this.router.navigate(['transactions', e.id]);
-  }
-
   async add() {
-    await this.router.navigate(['transactions']);
-  }
-
-  delete(e: Transaction) {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      maxWidth: '450px',
-      data: {
-        title: 'Delete Transaction?',
-        message: 'Do you really want to delete the selected transaction?'
-      }
-    });
-
-    dialogRef.afterClosed().subscribe(dialogResult => {
-      if (dialogResult === true) {
-        this.transactionService.delete(e.id).subscribe({
-          next: response => {
-            if (response.status === 200) {
-              this.snackBar.open('Transaction deleted!"', 'Close', {duration: 5000});
-              this.reloadData();
-            } else {
-              this.snackBar.open('Transaction could not be deleted, server error!', 'Close', {duration: 5000});
-            }
-          },
-          error: () => this.snackBar.open('Transaction could not be deleted, server error!', 'Close', {duration: 5000})
-        });
-      }
-    });
+    await this.router.navigate(['transaction']);
   }
 }

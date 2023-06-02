@@ -14,23 +14,23 @@
   <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
       <mat-form-field>
           <mat-label>Paying Account</mat-label>
-          <input #inputPayingAccount formControlName="payingAccount" matInput maxlength="30" required>
+          <input #inputPayingAccount formControlName="payingAccount" matInput maxlength="30" type="text" required>
       </mat-form-field>
       <mat-form-field>
           <mat-label>Receiving Account</mat-label>
-          <input #inputReceivingAccount formControlName="receivingAccount" matInput maxlength="30" required>
+          <input #inputReceivingAccount formControlName="receivingAccount" matInput maxlength="30" type="text" required>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Amount</mat-label>
-        <input #inputAmount formControlName="amount" matInput maxlength="20" required>
+        <input #inputAmount formControlName="amount" matInput maxlength="20" type="number" required>
       </mat-form-field>
       <!-- <mat-form-field>
         <mat-label>Time</mat-label>
-        <input #inputTime formControlName="time" matInput maxlength="10" required>
+        <input #inputTime formControlName="time" matInput maxlength="10" type="text" required>
       </mat-form-field> -->
       <mat-form-field>
         <mat-label>Description</mat-label>
-        <input #inputDescription formControlName="description" matInput maxlength="200">
+        <input #inputDescription formControlName="description" matInput maxlength="200" type="text">
       </mat-form-field>
       <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
           Save

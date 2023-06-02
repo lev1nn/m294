@@ -2,15 +2,15 @@
   <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
       <mat-form-field>
           <mat-label>Firstname</mat-label>
-          <input #inputFirstname formControlName="firstName" matInput maxlength="100" required>
+          <input #inputFirstname formControlName="firstName" matInput maxlength="100" type="text" required>
       </mat-form-field>
       <mat-form-field >
           <mat-label>Lastname</mat-label>
-          <input #inputLastName formControlName="lastName" matInput maxlength="100" required>
+          <input #inputLastName formControlName="lastName" matInput maxlength="100" type="text" required>
       </mat-form-field>
       <mat-form-field >
         <mat-label>Age</mat-label>
-        <input #inputAge formControlName="age" matInput maxlength="3" required>
+        <input #inputAge formControlName="age" matInput maxlength="3" type="number" required>
       </mat-form-field>
       <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
           Save

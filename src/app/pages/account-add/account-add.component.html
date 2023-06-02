@@ -14,15 +14,15 @@
   <form (ngSubmit)="save(objForm.value)" [formGroup]="objForm!">
       <mat-form-field>
           <mat-label>Account Name</mat-label>
-          <input #inputAccountName formControlName="accountName" matInput maxlength="30" required>
+          <input #inputAccountName formControlName="accountName" matInput maxlength="30" type="text" required>
       </mat-form-field>
       <mat-form-field>
           <mat-label>Balance</mat-label>
-          <input #inputBalance formControlName="balance" matInput maxlength="20" required>
+          <input #inputBalance formControlName="balance" matInput maxlength="20" type="number" required>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Customer</mat-label>
-        <input #inputCustomer formControlName="customer" matInput maxlength="20" required>
+        <input #inputCustomer formControlName="customer" matInput maxlength="20" type="text" required>
       </mat-form-field>
       <button [disabled]="!objForm.valid" color="primary" mat-raised-button style="width: 210px">
           Save

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {AppAuthService} from '../../service/app.auth.service';
 import {HeaderService} from '../../service/header.service';
 import { OAuthService } from 'angular-oauth2-oidc';
@@ -8,7 +8,7 @@ import { OAuthService } from 'angular-oauth2-oidc';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   useralias = '';
   username = '';
 

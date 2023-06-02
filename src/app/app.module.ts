@@ -32,6 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { TransactionAddComponent } from './pages/transaction-add/transaction-add.component';
 import { AccountAddComponent } from './pages/account-add/account-add.component';
+import { NoAccessComponent } from './pages/no-access/no-access.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-o2f3aut:8080/realms/ILV', //'https://sso.bbzbl-it.dev/realms/ILV' //'http://localhost:8080/realms/ILV'
@@ -63,7 +64,8 @@ export function storageFactory(): OAuthStorage {
     IsInRolesDirective,
     ConfirmDialogComponent,
     TransactionAddComponent,
-    AccountAddComponent
+    AccountAddComponent,
+    NoAccessComponent
   ],
   imports: [
     BrowserModule,
